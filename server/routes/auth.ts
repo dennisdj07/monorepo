@@ -10,7 +10,7 @@ router.post('/signup', async (req, res) => {
     let parsedInput = signupInput.safeParse(req.body)
     if (!parsedInput.success) {
       return res.status(403).json({
-        msg: "error"
+        msg: "invalid inputs"
       });
     }
     const username = parsedInput.data.username 
